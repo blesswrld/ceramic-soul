@@ -1,0 +1,21 @@
+.promo {
+    padding-top: 50px;
+    &__title {
+        // Более логические свойства
+        margin-block-start: 50px;
+        padding-inline: 5px;
+
+        // Более простые
+        /* margin-top: 50px;
+        padding: 0 5px; */
+    }
+    &__img {
+        width: 270px;
+        height: 377px;
+        margin: 40px auto 0 auto;
+        box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
+    }
+    &__btn {
+        margin: 18px auto 0 auto;
+    }
+}

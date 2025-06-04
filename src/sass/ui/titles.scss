@@ -1,0 +1,9 @@
+// Импортируем миксины
+@use "/src/sass/base/mixins.scss" as *;
+
+.title-h1-italic {
+    // Используй миксин
+    @include title;
+    font-size: 24px;
+    font-style: italic;
+}
