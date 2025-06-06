@@ -67,6 +67,26 @@ html {
     padding: 0 10px;
 }
 
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 720px;
+        padding: 0;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .container {
+        max-width: 1440px;
+    }
+}
+
 // span {
 //     // применение функции расчета px в rem (обращаемся к файлу функции и записываем количество px в виде аргумента)
 //     // font-size: pxtorem.rem(32);
