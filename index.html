@@ -134,7 +134,7 @@
                         />
                     </div>
                     <div class="pure-u-1 pure-u-xl-1-2 pure-u-xxl-3-5">
-                        <form action="#">
+                        <form class="touch__form" action="#">
                             <fieldset class="touch__fieldset">
                                 <div class="touch__input-block">
                                     <label class="touch__label" for="name"
@@ -149,7 +149,6 @@
                                         required
                                     />
                                 </div>
-
                                 <div class="touch__input-block">
                                     <label class="touch__label" for="email"
                                         >Email</label
@@ -172,7 +171,9 @@
                                 name="question"
                                 id="question"
                                 placeholder="Question"
+                                required
                             ></textarea>
+
                             <label
                                 class="touch__label touch__check-block"
                                 for="checkbox"
@@ -183,17 +184,23 @@
                                     type="checkbox"
                                     id="checkbox"
                                 />
-
                                 I agree with the <a href="#">terms</a></label
                             >
+
                             <button class="btn-send touch__btn">
                                 send request
                             </button>
                         </form>
                     </div>
                 </div>
+                <img
+                    src="/src/img/form/vase.png"
+                    alt="vase"
+                    class="touch__decor"
+                />
             </div>
         </section>
+
         <script type="module" src="/src/js/script.js"></script>
     </body>
 </html>
