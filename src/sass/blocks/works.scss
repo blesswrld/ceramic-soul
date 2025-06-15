@@ -2,20 +2,17 @@
 
 .works {
     padding-top: 60px;
-    padding-bottom: 100px;
     &__slider {
         margin-top: 40px;
-        padding-bottom: 45px;
     }
     .swiper-slide img {
         width: 100%;
     }
-    .swiper-button-prev,
-    .swiper-button-next {
+    .works__slider-nav {
         display: none;
     }
     .swiper-pagination {
-        bottom: 0;
+        bottom: -35px;
     }
     .swiper-pagination-bullet {
         width: 10px;
@@ -45,13 +42,53 @@
 
 @media screen and (min-width: 1200px) {
     .works {
+        &__wrapper {
+            position: relative;
+        }
         &__slider {
             margin: 80px 40px 0 40px;
-            padding-bottom: 40px;
         }
-        .swiper-button-prev,
-        .swiper-button-next {
+        .swiper-slide img {
+            width: 100%;
+            margin: 0;
+        }
+        .swiper-pagination {
+            bottom: -30px;
+        }
+        .works__slider-nav {
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
             display: block;
+            font-size: 21px;
+            background: transparent;
+            border: none;
+            padding: 0;
+            &:before {
+                width: auto;
+                margin: 0;
+            }
+        }
+        .icon-left-open {
+            left: 15px;
+        }
+        .icon-right-open {
+            right: 15px;
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .works {
+        padding-top: 100px;
+        &__slider {
+            margin: 80px 85px 0 85px;
+        }
+        .icon-left-open {
+            left: 40px;
+        }
+        .icon-right-open {
+            right: 40px;
         }
     }
 }
