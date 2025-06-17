@@ -1,0 +1,179 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.footer {
+    margin-top: 60px;
+    background-color: $dark;
+    color: $light;
+    padding: 50px 57px 50px 10px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.footer__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px 20px;
+    padding-bottom: 35px;
+    margin-bottom: 30px;
+}
+
+.footer__column--newsletter,
+.footer__column--information,
+.footer__column--follow {
+    grid-column: 1 / -1;
+}
+
+.footer__heading {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 40px 0;
+}
+
+.footer__description {
+    width: 100% !important;
+    color: $light;
+    margin: 0 0 40px 0;
+}
+
+.footer__input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $light;
+    padding-bottom: 15px;
+    color: $ui-active;
+    font-size: 16px;
+}
+.footer__input::placeholder {
+    color: $ui-active;
+}
+.footer__input:focus {
+    outline: none;
+}
+
+.footer__checkbox-group {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.footer__checkbox {
+    margin-right: 6px;
+    width: 15px;
+    height: 15px;
+}
+.footer__checkbox:checked {
+    background-color: $light;
+}
+
+.footer__checkbox-label {
+    color: $light;
+    cursor: pointer;
+}
+
+.footer__link-terms {
+    color: #a22dc6;
+    text-decoration: none;
+}
+.footer__link-terms:hover {
+    text-decoration: underline;
+}
+
+.footer__button {
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid $light;
+    color: $light;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.footer__button:hover {
+    background-color: $ceramic;
+    transition: background-color 0.3s;
+}
+
+.footer__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.footer__link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer__link:hover {
+    color: $light;
+}
+
+.footer__socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.footer__social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50% !important;
+    color: $light;
+    text-decoration: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.footer__social-link:hover {
+    background-color: $light;
+    border-color: $light;
+    color: $dark;
+}
+
+// .icon-facebook:before {
+// }
+// .icon-instagram:before {
+// }
+// .icon-pinterest-circled:before {
+// }
+
+.footer__copyright {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+.footer__copyright p {
+    margin: 0;
+}
+
+@media (min-width: 1024px) {
+    .footer__content {
+        grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+    }
+
+    .footer__column--newsletter,
+    .footer__column--information,
+    .footer__column--follow {
+        grid-column: auto;
+    }
+}
+
+@media (min-width: 1920px) {
+    .footer {
+        padding: 80px 57px 50px 10px;
+    }
+}

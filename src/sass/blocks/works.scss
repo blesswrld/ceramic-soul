@@ -15,6 +15,7 @@
         bottom: -35px;
     }
     .swiper-pagination-bullet {
+        display: inline-block;
         width: 10px;
         height: 10px;
         background-color: $dark;
