@@ -57,3 +57,23 @@ try {
         modules: [Navigation, Pagination],
     });
 } catch (e) {}
+
+try {
+    const tabs = document.querySelectorAll(".catalog__tab");
+    const contents = document.querySelectorAll(".catalog__content-item");
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => {
+            // Удаляем активный класс у всех табов и контента
+            tabs.forEach((t) => t.classList.remove("catalog__tab_active"));
+            contents.forEach((c) => (c.style.display = "none"));
+
+            // Добавляем класс активности к нажатому табу и показываем соответствующий контент
+            tab.classList.add("catalog__tab_active");
+            contents[index].style.display = "block";
+        });
+    });
+
+    // Показываем первый контент при загрузке
+    contents.forEach((c, i) => (c.style.display = i === 0 ? "block" : "none"));
+} catch (error) {}

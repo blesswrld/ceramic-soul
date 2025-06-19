@@ -37,6 +37,7 @@
         background-color: $light;
         transition: transform 0.3s;
         opacity: 0;
+        z-index: 1000;
         &_active {
             transform: translateX(100%);
             opacity: 1;
@@ -44,6 +45,7 @@
         &-close {
             width: 19.8px;
             height: 19.8px;
+            cursor: pointer;
             span {
                 display: block;
                 width: 19.8px;
