@@ -55,6 +55,7 @@
         &:hover {
             color: $ceramic;
             border: 1px solid $ceramic;
+            transition: color 0.3s;
         }
     }
 }

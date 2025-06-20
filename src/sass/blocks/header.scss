@@ -20,6 +20,10 @@
                 display: block;
                 width: 20px;
                 height: 20px;
+                &:hover {
+                    opacity: 70%;
+                    transition: opacity 0.3s;
+                }
             }
         }
     }
@@ -78,6 +82,10 @@
             line-height: normal;
             text-transform: uppercase;
             text-decoration: none;
+            &:hover {
+                opacity: 70%;
+                transition: opacity 0.3s;
+            }
         }
     }
 }
@@ -120,6 +128,10 @@
             text-transform: uppercase;
             font-size: 20px;
             text-decoration: none;
+            &:hover {
+                opacity: 70%;
+                transition: opacity 0.3s;
+            }
         }
         &__menu {
             display: none;
