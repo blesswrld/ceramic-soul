@@ -80,6 +80,7 @@
 
     &__content {
         display: grid;
+        position: relative;
         grid-template-columns: 1fr;
         gap: 20px;
         margin-top: 60px;
@@ -87,6 +88,24 @@
         @media (min-width: 768px) {
             grid-template-columns: repeat(2, 1fr);
             margin-top: 70px;
+            &::after {
+                content: "";
+                position: absolute;
+                top: -10px;
+                left: -10px;
+                width: 200px;
+                height: 1px;
+                background-color: $dark;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                top: -10px;
+                left: -10px;
+                width: 1px;
+                height: 200px;
+                background-color: $dark;
+            }
         }
         @media (min-width: 1200px) {
             grid-template-columns: repeat(3, 1fr);
