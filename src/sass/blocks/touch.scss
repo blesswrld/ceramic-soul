@@ -2,6 +2,14 @@
 
 .touch {
     padding-top: 60px;
+    .just-validate-error-field {
+        border: none;
+        outline: 1px solid $ui-error;
+
+        &:focus {
+            outline: 1px solid $ceramic;
+        }
+    }
     &__wrapper {
         margin-top: 60px;
     }
@@ -78,6 +86,7 @@
         margin-right: 15px;
         width: 15px;
         height: 15px;
+        outline: none !important;
     }
     &__btn {
         margin-top: 20px;

@@ -1,4 +1,5 @@
 import Swiper from "swiper";
+import JustValidate from "just-validate";
 import { Navigation, Pagination } from "swiper/modules";
 
 import "swiper/css";
@@ -77,3 +78,67 @@ try {
     // Показываем первый контент при загрузке
     contents.forEach((c, i) => (c.style.display = i === 0 ? "block" : "none"));
 } catch (error) {}
+
+try {
+    const validator = new JustValidate("#contact-form", {
+        submitFormAutomatically: "true", //
+    });
+    validator
+        .addField("#name", [
+            {
+                rule: "required",
+                errorMessage: "Please fill the name",
+            },
+            {
+                rule: "minLength",
+                value: 2,
+                errorMessage: "Min 2 char!",
+            },
+        ])
+        .addField("#email", [
+            {
+                rule: "required",
+                errorMessage: "Enter your email address",
+            },
+            {
+                rule: "email",
+                errorMessage:
+                    "Please enter an email of the following format: example@gmail.com",
+            },
+        ])
+        .addField(
+            "#question",
+            [
+                {
+                    rule: "required",
+                    errorMessage: "Please write down your question",
+                },
+                {
+                    rule: "minLength",
+                    value: 5,
+                    errorMessage: "Too short min 5 char!",
+                },
+            ],
+            {
+                errorsContainer: document
+                    .querySelector("#question")
+                    .parentElement.querySelector(".error-message"),
+            }
+        )
+        .addField(
+            "#checkbox",
+            [
+                {
+                    rule: "required",
+                    errorMessage: "Need to agree with the terms",
+                },
+            ],
+            {
+                errorsContainer: document
+                    .querySelector("#checkbox")
+                    .parentElement.parentElement.querySelector(
+                        ".checkbox-error-message"
+                    ),
+            }
+        );
+} catch (e) {}

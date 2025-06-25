@@ -122,7 +122,7 @@
                         />
                     </div>
                     <div class="pure-u-1 pure-u-xl-1-2 pure-u-xxl-3-5">
-                        <form class="touch__form" action="#">
+                        <form class="touch__form" id="contact-form" action="#">
                             <fieldset class="touch__fieldset">
                                 <div class="touch__input-block">
                                     <label class="touch__label" for="name"
@@ -162,6 +162,8 @@
                                 required
                             ></textarea>
 
+                            <div class="error-message"></div>
+
                             <label
                                 class="touch__label touch__check-block"
                                 for="checkbox"
@@ -172,8 +174,10 @@
                                     type="checkbox"
                                     id="checkbox"
                                 />
-                                I agree with the <a href="#">terms</a></label
-                            >
+                                I agree with the <a href="#">terms</a>
+                            </label>
+
+                            <div class="checkbox-error-message"></div>
 
                             <button class="btn-send touch__btn">
                                 send request
