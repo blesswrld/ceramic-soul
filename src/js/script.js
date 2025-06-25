@@ -18,40 +18,28 @@ const burger = document.querySelector(".burger"),
     close = document.querySelector(".header__menu-close"),
     menu = document.querySelector(".header__menu");
 
-burger.addEventListener("click", () => {
-    menu.classList.add("header__menu_active");
-    document.body.style.overflow = "hidden";
-});
+if (burger && menu && close) {
+    burger.addEventListener("click", () => {
+        menu.classList.add("header__menu_active");
+        document.body.style.overflow = "hidden";
+    });
 
-close.addEventListener("click", () => {
-    menu.classList.remove("header__menu_active");
-    document.body.style.overflow = "";
-});
+    close.addEventListener("click", () => {
+        menu.classList.remove("header__menu_active");
+        document.body.style.overflow = "";
+    });
+}
 
+// Слайдер (оборачиваем в try/catch)
 try {
     new Swiper(".works__slider", {
         slidesPerView: 1,
         loop: true,
-
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".icon-right-open",
-            prevEl: ".icon-left-open",
-        },
-
+        pagination: { el: ".swiper-pagination", clickable: true },
+        navigation: { nextEl: ".icon-right-open", prevEl: ".icon-left-open" },
         breakpoints: {
-            // when window width is >= 1200px
-            1200: {
-                slidesPerView: 3,
-                spaceBetween: 5,
-            },
-            1920: {
-                slidesPerView: 3,
-                spaceBetween: 35,
-            },
+            1200: { slidesPerView: 3, spaceBetween: 5 },
+            1920: { slidesPerView: 3, spaceBetween: 35 },
         },
 
         // configure Swiper to use modules
@@ -61,84 +49,115 @@ try {
 
 try {
     const tabs = document.querySelectorAll(".catalog__tab");
-    const contents = document.querySelectorAll(".catalog__content-item");
-
-    tabs.forEach((tab, index) => {
-        tab.addEventListener("click", () => {
-            // Удаляем активный класс у всех табов и контента
-            tabs.forEach((t) => t.classList.remove("catalog__tab_active"));
-            contents.forEach((c) => (c.style.display = "none"));
-
-            // Добавляем класс активности к нажатому табу и показываем соответствующий контент
-            tab.classList.add("catalog__tab_active");
-            contents[index].style.display = "block";
+    if (tabs.length > 0) {
+        const contents = document.querySelectorAll(".catalog__content-item");
+        tabs.forEach((tab, index) => {
+            tab.addEventListener("click", () => {
+                tabs.forEach((t) => t.classList.remove("catalog__tab_active"));
+                contents.forEach((c) => (c.style.display = "none"));
+                tab.classList.add("catalog__tab_active");
+                contents[index].style.display = "block";
+            });
         });
-    });
-
-    // Показываем первый контент при загрузке
-    contents.forEach((c, i) => (c.style.display = i === 0 ? "block" : "none"));
+        contents.forEach(
+            (c, i) => (c.style.display = i === 0 ? "block" : "none")
+        );
+    }
 } catch (error) {}
 
 try {
-    const validator = new JustValidate("#contact-form", {
-        submitFormAutomatically: "true", //
-    });
-    validator
-        .addField("#name", [
-            {
-                rule: "required",
-                errorMessage: "Please fill the name",
-            },
-            {
-                rule: "minLength",
-                value: 2,
-                errorMessage: "Min 2 char!",
-            },
-        ])
-        .addField("#email", [
-            {
-                rule: "required",
-                errorMessage: "Enter your email address",
-            },
-            {
-                rule: "email",
-                errorMessage:
-                    "Please enter an email of the following format: example@gmail.com",
-            },
-        ])
-        .addField(
-            "#question",
-            [
+    const forms = document.querySelectorAll("form");
+
+    forms.forEach((form) => {
+        // Настраиваем классы для стилей
+        const validator = new JustValidate(form, {
+            submitFormAutomatically: true,
+            errorFieldCssClass: "just-validate-error-field",
+            errorLabelCssClass: "just-validate-error-label",
+        });
+
+        // --- Поля применяются только если существуют в форме ---
+        if (form.querySelector("#name")) {
+            validator.addField("#name", [
+                { rule: "required", errorMessage: "Please fill the name" },
+                { rule: "minLength", value: 2, errorMessage: "Min 2 char!" },
+            ]);
+        }
+
+        if (form.querySelector("#email")) {
+            validator.addField("#email", [
+                { rule: "required", errorMessage: "Enter your email address" },
                 {
-                    rule: "required",
-                    errorMessage: "Please write down your question",
+                    rule: "email",
+                    errorMessage:
+                        "Please enter an email of the following format: example@gmail.com",
                 },
+            ]);
+        }
+
+        if (form.querySelector("#footer-email")) {
+            validator.addField("#footer-email", [
+                { rule: "required", errorMessage: "Enter your email address" },
                 {
-                    rule: "minLength",
-                    value: 5,
-                    errorMessage: "Too short min 5 char!",
+                    rule: "email",
+                    errorMessage:
+                        "Please enter an email of the following format: example@gmail.com",
                 },
-            ],
-            {
-                errorsContainer: document
-                    .querySelector("#question")
-                    .parentElement.querySelector(".error-message"),
-            }
-        )
-        .addField(
-            "#checkbox",
-            [
+            ]);
+        }
+
+        if (form.querySelector("#question")) {
+            validator.addField(
+                "#question",
+                [
+                    {
+                        rule: "required",
+                        errorMessage: "Please write down your question",
+                    },
+                    {
+                        rule: "minLength",
+                        value: 5,
+                        errorMessage: "Too short min 5 char!",
+                    },
+                ],
+                { errorsContainer: form.querySelector(".error-message") }
+            );
+        }
+
+        if (form.querySelector("#checkbox")) {
+            validator.addField(
+                "#checkbox",
+                [
+                    {
+                        rule: "required",
+                        errorMessage: "You must agree to the terms",
+                    },
+                ],
                 {
-                    rule: "required",
-                    errorMessage: "Need to agree with the terms",
-                },
-            ],
-            {
-                errorsContainer: document
-                    .querySelector("#checkbox")
-                    .parentElement.parentElement.querySelector(
+                    errorsContainer: form.querySelector(
                         ".checkbox-error-message"
                     ),
-            }
-        );
-} catch (e) {}
+                }
+            );
+        }
+
+        if (form.querySelector("#footer-terms")) {
+            validator.addField(
+                "#footer-terms",
+                [
+                    {
+                        rule: "required",
+                        errorMessage: "You must agree to the terms",
+                    },
+                ],
+                {
+                    errorsContainer: form.querySelector(
+                        ".footer-checkbox-error"
+                    ),
+                }
+            );
+        }
+    });
+} catch (e) {
+    console.error("Validation script failed:", e);
+}

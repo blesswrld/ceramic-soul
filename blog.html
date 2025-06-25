@@ -15,6 +15,31 @@
     <body>
         <section class="blog">
             <div class="container">
+                <div class="header__menu">
+                    <div class="header__menu-close">
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <nav class="header__menu-nav">
+                        <ul>
+                            <li>
+                                <a href="catalog.html" class="header__menu-link"
+                                    >catalog</a
+                                >
+                            </li>
+                            <li>
+                                <a href="blog.html" class="header__menu-link"
+                                    >blog</a
+                                >
+                            </li>
+                            <li>
+                                <a href="about.html" class="header__menu-link"
+                                    >about</a
+                                >
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
                 <div class="header">
                     <div class="header__top">
                         <div class="burger">
@@ -26,11 +51,9 @@
                             <img src="/src/logo/logo.png" alt="logo" />
                         </a>
                         <div class="header__icons">
-                            <a href="#">
-                                <span class="icon-search"></span>
-                            </a>
-                            <a href="#">
-                                <span class="icon-shopping-bag"> </span
+                            <a href="#"><span class="icon-search"></span></a>
+                            <a href="#"
+                                ><span class="icon-shopping-bag"></span
                             ></a>
                         </div>
                     </div>
@@ -139,15 +162,19 @@
                                 <input
                                     type="email"
                                     id="footer-email"
+                                    name="footer_email"
                                     class="footer__input"
                                     placeholder="Enter your e-mail"
+                                    required
                                 />
                             </div>
                             <div class="footer__checkbox-group">
                                 <input
                                     type="checkbox"
                                     id="footer-terms"
+                                    name="footer_agreement"
                                     class="footer__checkbox"
+                                    required
                                 />
                                 <label
                                     for="footer-terms"
@@ -159,6 +186,7 @@
                                     >
                                 </label>
                             </div>
+                            <div class="footer-checkbox-error"></div>
                             <button
                                 type="submit"
                                 class="btn-submit footer__button"

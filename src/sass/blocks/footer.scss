@@ -16,6 +16,15 @@
     background-color: $dark;
     color: $light;
     padding: 50px 57px 50px 10px;
+    .just-validate-error-field {
+        border-bottom: 1px solid red;
+        &:focus {
+            border-bottom: 1px solid $ceramic;
+        }
+    }
+    .footer-checkbox-error {
+        margin-top: -15px;
+    }
 
     &__content {
         display: grid;
@@ -97,6 +106,7 @@
         text-transform: uppercase;
         font-weight: 500;
         margin-bottom: 0;
+        margin-top: 20px;
         &:hover {
             background-color: $ceramic;
             transition: background-color 0.3s;

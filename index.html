@@ -36,11 +36,15 @@
                             </li>
 
                             <li>
-                                <a href="#" class="header__menu-link">blog</a>
+                                <a href="blog.html" class="header__menu-link"
+                                    >blog</a
+                                >
                             </li>
 
                             <li>
-                                <a href="#" class="header__menu-link">about</a>
+                                <a href="about.html" class="header__menu-link"
+                                    >about</a
+                                >
                             </li>
                         </ul>
                     </nav>
@@ -56,11 +60,9 @@
                             <img src="/src/logo/logo.png" alt="logo" />
                         </a>
                         <div class="header__icons">
-                            <a href="#">
-                                <span class="icon-search"></span>
-                            </a>
-                            <a href="#">
-                                <span class="icon-shopping-bag"> </span
+                            <a href="#"><span class="icon-search"></span></a>
+                            <a href="#"
+                                ><span class="icon-shopping-bag"></span
                             ></a>
                         </div>
                     </div>
@@ -84,7 +86,7 @@
                         </ul>
                     </nav>
                 </div>
-                <!-- комбинируем классы -->
+                <!-- Комбинируем классы -->
                 <div class="promo__wrapper">
                     <h1 class="title-h1-italic promo__title">
                         Make your dream come true
@@ -170,7 +172,7 @@
                         />
                     </div>
                     <div class="pure-u-1 pure-u-xl-1-2 pure-u-xxl-3-5">
-                        <form class="touch__form" id="contact-form" action="#">
+                        <form class="touch__form" action="#">
                             <fieldset class="touch__fieldset">
                                 <div class="touch__input-block">
                                     <label class="touch__label" for="name"
@@ -222,12 +224,10 @@
                                     type="checkbox"
                                     id="checkbox"
                                 />
-                                I agree with the <a href="#">terms</a></label
-                            >
-
+                                I agree with the <a href="#">terms</a>
+                            </label>
                             <div class="checkbox-error-message"></div>
-
-                            <button class="btn-send touch__btn">
+                            <button type="submit" class="btn-send touch__btn">
                                 send request
                             </button>
                         </form>
@@ -302,15 +302,19 @@
                                 <input
                                     type="email"
                                     id="footer-email"
+                                    name="footer_email"
                                     class="footer__input"
                                     placeholder="Enter your e-mail"
+                                    required
                                 />
                             </div>
                             <div class="footer__checkbox-group">
                                 <input
                                     type="checkbox"
                                     id="footer-terms"
+                                    name="footer_agreement"
                                     class="footer__checkbox"
+                                    required
                                 />
                                 <label
                                     for="footer-terms"
@@ -322,6 +326,8 @@
                                     >
                                 </label>
                             </div>
+                            <div class="footer-checkbox-error"></div>
+
                             <button
                                 type="submit"
                                 class="btn-submit footer__button"
@@ -387,9 +393,8 @@
                                 href="#"
                                 class="footer__social-link"
                                 aria-label="Instagram"
-                            >
-                                <i class="icon-instagram"></i>
-                            </a>
+                                ><i class="icon-instagram"></i
+                            ></a>
                             <a
                                 href="#"
                                 class="footer__social-link"

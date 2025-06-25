@@ -17,7 +17,7 @@
     <body>
         <section class="catalog">
             <div class="container">
-                <div class="header__menu header__menu">
+                <div class="header__menu">
                     <div class="header__menu-close">
                         <span></span>
                         <span></span>
@@ -53,11 +53,9 @@
                             <img src="/src/logo/logo.png" alt="logo" />
                         </a>
                         <div class="header__icons">
-                            <a href="#">
-                                <span class="icon-search"></span>
-                            </a>
-                            <a href="#">
-                                <span class="icon-shopping-bag"> </span
+                            <a href="#"><span class="icon-search"></span></a>
+                            <a href="#"
+                                ><span class="icon-shopping-bag"></span
                             ></a>
                         </div>
                     </div>
@@ -176,15 +174,19 @@
                                 <input
                                     type="email"
                                     id="footer-email"
+                                    name="footer_email"
                                     class="footer__input"
                                     placeholder="Enter your e-mail"
+                                    required
                                 />
                             </div>
                             <div class="footer__checkbox-group">
                                 <input
                                     type="checkbox"
                                     id="footer-terms"
+                                    name="footer_agreement"
                                     class="footer__checkbox"
+                                    required
                                 />
                                 <label
                                     for="footer-terms"
@@ -196,6 +198,7 @@
                                     >
                                 </label>
                             </div>
+                            <div class="footer-checkbox-error"></div>
                             <button
                                 type="submit"
                                 class="btn-submit footer__button"

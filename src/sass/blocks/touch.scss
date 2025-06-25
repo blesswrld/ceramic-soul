@@ -4,10 +4,16 @@
     padding-top: 60px;
     .just-validate-error-field {
         border: none;
-        outline: 1px solid $ui-error;
+        outline: 1px solid $ui-error !important;
 
         &:focus {
-            outline: 1px solid $ceramic;
+            outline: 1px solid $ceramic !important;
+        }
+    }
+    .touch__checkbox {
+        outline: none !important;
+        &:focus {
+            outline: none !important;
         }
     }
     &__wrapper {
