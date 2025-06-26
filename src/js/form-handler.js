@@ -4,7 +4,7 @@ import emailjs from "@emailjs/browser";
 export function initFormHandler() {
     try {
         // Инициализируем EmailJS ключом из .env файла
-        emailjs.init(import.meta.env.EMAILJS_PUBLIC_KEY);
+        emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
         const forms = document.querySelectorAll("form");
 
@@ -132,8 +132,8 @@ export function initFormHandler() {
                 }
 
                 // Инициализируем ключи из .env
-                const serviceID = import.meta.env.EMAILJS_SERVICE_ID;
-                const templateID = import.meta.env.EMAILJS_TEMPLATE_ID;
+                const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+                const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 
                 // 3. Вызываем emailjs.send с нашим объектом, а не emailjs.sendForm
                 emailjs
