@@ -47,19 +47,27 @@
             opacity: 1;
         }
         &-close {
-            width: 19.8px;
-            height: 19.8px;
+            // 1. Создаем контекст для позиционирования
+            position: relative;
+            width: 20px;
+            height: 20px;
             cursor: pointer;
+
             span {
                 display: block;
-                width: 19.8px;
+                position: absolute; // 2. Позиционируем линии абсолютно
+                top: 50%; // 3. Смещаем верхний край линии к центру
+                left: 0;
+                width: 20px;
                 height: 1px;
                 background-color: $dark;
+
                 &:nth-child(1) {
-                    transform: translateY(8px) rotate(45deg);
+                    // 4. Убираем translateY, теперь только поворот
+                    transform: rotate(45deg);
                 }
                 &:nth-child(2) {
-                    transform: translateY(8px) rotate(-45deg);
+                    transform: rotate(-45deg);
                 }
             }
         }
