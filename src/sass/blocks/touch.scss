@@ -2,6 +2,7 @@
 
 .touch {
     padding-top: 60px;
+
     .just-validate-error-field {
         border: none;
         outline: 1px solid $ui-error !important;
@@ -113,7 +114,10 @@
             display: block;
             position: absolute;
             right: 5%;
-            transform: translateY(-100%);
+            animation-name: rotateVase;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
         }
     }
 }

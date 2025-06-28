@@ -60,6 +60,12 @@
         &__title {
             padding-left: 571px;
         }
+        &__cta {
+            // animation: slideIn 3s;
+            animation-name: slideIn;
+            animation-duration: 3s;
+            // animation-iteration-count: ;
+        }
     }
 }
 

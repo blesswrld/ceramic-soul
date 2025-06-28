@@ -1,7 +1,9 @@
 // Импорт файлов
 @use "/src/sass/libs/modern-normalize.min.css";
 @use "/src/sass/libs/fontello.css";
+
 @use "/src/sass/base/basic.scss";
+@use "/src/sass/base/animation.scss";
 
 @use "/src/sass/blocks/header.scss";
 @use "/src/sass/blocks/footer.scss";

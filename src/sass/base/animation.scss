@@ -1,0 +1,31 @@
+// Кастомная анимация
+@keyframes slideIn {
+    /* // начальная стадия
+    from {
+        transform: translateX(100%);
+    }
+    // конечная
+    to {
+        transform: translateX(0%);
+    } */
+    // или
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes rotateVase {
+    from {
+        /* Смещаем И вращаем */
+        transform: translateY(-100%) rotate(0deg);
+    }
+    to {
+        /* Смещаем И вращаем */
+        transform: translateY(-100%) rotate(360deg);
+    }
+}
