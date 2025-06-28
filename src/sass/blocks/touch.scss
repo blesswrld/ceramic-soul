@@ -114,10 +114,6 @@
             display: block;
             position: absolute;
             right: 5%;
-            animation-name: rotateVase;
-            animation-duration: 10s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
         }
     }
 }
@@ -139,6 +135,12 @@
         }
         &__form {
             padding-left: 20px;
+        }
+        &__decor {
+            animation-name: rotateVase;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
         }
     }
 }
